@@ -10,7 +10,7 @@ to transfer registers, stack pointer and accumulator
 
 ==============================================================================*/
 
-#include "cpu/instructions/instructions_type.h"
+#include "instructions_type.h"
 
 // LDA - Load value into accumulator
 Mos6502_instruction Mos6502_LDA_immediate;

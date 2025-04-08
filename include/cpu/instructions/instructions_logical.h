@@ -1,0 +1,36 @@
+#ifndef INSTRUCTIONS_LOGICAL
+#define INSTRUCTIONS_LOGICAL
+
+#include "instructions_type.h"
+
+// AND - And memory with accumulator
+Mos6502_instruction Mos6502_AND_immediate;
+Mos6502_instruction Mos6502_AND_zeropage;
+Mos6502_instruction Mos6502_AND_zeropage_x;
+Mos6502_instruction Mos6502_AND_absolute;
+Mos6502_instruction Mos6502_AND_absolute_x;
+Mos6502_instruction Mos6502_AND_absolute_y;
+Mos6502_instruction Mos6502_AND_indirect_x;
+Mos6502_instruction Mos6502_AND_indirect_y;
+
+// EOR - Exclusive Or memory with accumulator
+Mos6502_instruction Mos6502_EOR_immediate;
+Mos6502_instruction Mos6502_EOR_zeropage;
+Mos6502_instruction Mos6502_EOR_zeropage_x;
+Mos6502_instruction Mos6502_EOR_absolute;
+Mos6502_instruction Mos6502_EOR_absolute_x;
+Mos6502_instruction Mos6502_EOR_absolute_y;
+Mos6502_instruction Mos6502_EOR_indirect_x;
+Mos6502_instruction Mos6502_EOR_indirect_y;
+
+// ORA - Or memory with accumulator
+Mos6502_instruction Mos6502_ORA_immediate;
+Mos6502_instruction Mos6502_ORA_zeropage;
+Mos6502_instruction Mos6502_ORA_zeropage_x;
+Mos6502_instruction Mos6502_ORA_absolute;
+Mos6502_instruction Mos6502_ORA_absolute_x;
+Mos6502_instruction Mos6502_ORA_absolute_y;
+Mos6502_instruction Mos6502_ORA_indirect_x;
+Mos6502_instruction Mos6502_ORA_indirect_y;
+
+#endif // INSTRUCTIONS_LOGICAL

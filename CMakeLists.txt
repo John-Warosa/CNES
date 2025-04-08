@@ -6,13 +6,13 @@ project(NES_EMULATOR VERSION 0.1
 DESCRIPTION "An emulator for the NES"
 LANGUAGES C)
 
-file(GLOB_RECURSE nes_src "src/*.c")
+file(GLOB_RECURSE cnes_src "src/*.c")
 
-add_executable(nes ${nes_src})
+add_executable(cnes ${cnes_src})
 
 find_package(raylib REQUIRED)
 
-target_link_libraries(nes raylib)
-target_include_directories(nes PRIVATE include)
-target_compile_features(nes PRIVATE c_std_99)
-target_compile_options(nes PRIVATE -Wall -Wextra -Wpedantic -O2)
+target_link_libraries(cnes raylib)
+target_include_directories(cnes PRIVATE include)
+target_compile_features(cnes PRIVATE c_std_99)
+target_compile_options(cnes PRIVATE -std=c99 -Wall -Wextra -O2)
