@@ -1,6 +1,18 @@
 #ifndef INSTRUCTIONS_INCREMENT_DECREMENT_H
 #define INSTRUCTIONS_INCREMENT_DECREMENT_H
 
+/*==============================================================================
+
+Increment and Decrement instructions
+
+Defined here are the DEC, DEX, DEY, INC, INX and INY instructions
+for the 6502
+These instructions are used by the processor to increment and decrement
+registers and memory. The instructions set the negative and zero flag
+based on the result
+
+==============================================================================*/
+
 #include "instructions_type.h"
 
 // DEC - Decrement memory

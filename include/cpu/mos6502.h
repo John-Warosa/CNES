@@ -1,6 +1,7 @@
 #ifndef MOS6502
 #define MOS6502
 
+#include <stddef.h>
 #include <stdint.h>
 
 typedef struct Bus Bus;
@@ -15,6 +16,8 @@ typedef struct Mos6502 {
 
   uint8_t flags;
   uint8_t opcode;
+
+  size_t cycles;
 
   Bus *bus;
 } Mos6502;
