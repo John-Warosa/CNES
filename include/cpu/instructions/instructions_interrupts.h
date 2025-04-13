@@ -1,7 +1,7 @@
 #ifndef INSTRUCTIONS_INTERRUPTS_H
 #define INSTRUCTIONS_INTERRUPTS_H
 
-#include "instructions_type.h"
+#include "cpu/mos6502_types.h"
 
 // BRK - Software interrupt
 Mos6502_instruction Mos6502_BRK_implied;

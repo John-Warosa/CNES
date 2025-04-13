@@ -1,7 +1,7 @@
 #ifndef INSTRUCTIONS_SHIFT_ROTATE_H
 #define INSTRUCTIONS_SHIFT_ROTATE_H
 
-#include "instructions_type.h"
+#include "cpu/mos6502_types.h"
 
 // ASL - Arithmetic shift left
 Mos6502_instruction Mos6502_ASL_accumulator;

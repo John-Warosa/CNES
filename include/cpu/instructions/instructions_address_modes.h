@@ -43,9 +43,8 @@ The address modes work as follows:
 
 ==============================================================================*/
 
+#include "cpu/mos6502_types.h"
 #include <stdint.h>
-
-typedef struct Mos6502 Mos6502;
 
 typedef struct {
   uint16_t address;

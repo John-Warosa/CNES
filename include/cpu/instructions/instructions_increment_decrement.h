@@ -13,7 +13,7 @@ based on the result
 
 ==============================================================================*/
 
-#include "instructions_type.h"
+#include "cpu/mos6502_types.h"
 
 // DEC - Decrement memory
 Mos6502_instruction Mos6502_DEC_zeropage;

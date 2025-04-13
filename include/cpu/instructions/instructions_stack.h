@@ -12,7 +12,7 @@ decrements the stack pointer, while popping increases it
 
 ==============================================================================*/
 
-#include "instructions_type.h"
+#include "cpu/mos6502_types.h"
 
 // PHA - Push accumulator onto stack
 Mos6502_instruction Mos6502_PHA_implied;

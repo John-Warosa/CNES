@@ -1,7 +1,7 @@
 #ifndef INSTRUCTIONS_JUMPS_H
 #define INSTRUCTIONS_JUMPS_H
 
-#include "instructions_type.h"
+#include "cpu/mos6502_types.h"
 
 // JMP - Jump to given address
 Mos6502_instruction Mos6502_JMP_absolute;

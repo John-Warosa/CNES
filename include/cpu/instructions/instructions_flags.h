@@ -1,7 +1,7 @@
 #ifndef INSTRUCTIONS_FLAGS_H
 #define INSTRUCTIONS_FLAGS_H
 
-#include "instructions_type.h"
+#include "cpu/mos6502_types.h"
 
 // CLC - Clear carry flag
 Mos6502_instruction Mos6502_CLC_implied;

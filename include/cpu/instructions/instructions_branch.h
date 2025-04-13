@@ -1,7 +1,7 @@
 #ifndef INSTRUCTIONS_BRANCH_H
 #define INSTRUCTIONS_BRANCH_H
 
-#include "instructions_type.h"
+#include "cpu/mos6502_types.h"
 
 // BCC - Branch on carry clear
 Mos6502_instruction Mos6502_BCC_relative;

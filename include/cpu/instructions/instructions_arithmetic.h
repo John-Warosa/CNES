@@ -1,7 +1,7 @@
 #ifndef INSTRUCTIONS_ARITHMETIC_H
 #define INSTRUCTIONS_ARITHMETIC_H
 
-#include "instructions_type.h"
+#include "cpu/mos6502_types.h"
 
 // ADC - Add to accumulator with carry
 Mos6502_instruction Mos6502_ADC_immediate;

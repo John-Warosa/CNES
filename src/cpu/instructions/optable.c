@@ -1,6 +1,5 @@
 #include "cpu/instructions/optable.h"
 #include "cpu/instructions/instructions_increment_decrement.h"
-#include "cpu/instructions/instructions_type.h"
 
 Mos6502_instruction *const optable[256] = {
     // Increment / Decrement

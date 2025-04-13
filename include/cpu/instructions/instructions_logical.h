@@ -1,7 +1,7 @@
 #ifndef INSTRUCTIONS_LOGICAL
 #define INSTRUCTIONS_LOGICAL
 
-#include "instructions_type.h"
+#include "cpu/mos6502_types.h"
 
 // AND - And memory with accumulator
 Mos6502_instruction Mos6502_AND_immediate;

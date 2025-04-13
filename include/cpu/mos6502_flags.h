@@ -32,10 +32,9 @@
 
 ==============================================================================*/
 
+#include "cpu/mos6502_types.h"
 #include <stdbool.h>
 #include <stdint.h>
-
-typedef struct Mos6502 Mos6502;
 
 //==============================================================================
 // Flags set without condition
@@ -61,12 +60,12 @@ void Mos6502_set_negative_zero_flag(Mos6502 *cpu, uint8_t byte);
 // Stack functionality
 //==============================================================================
 
-typedef enum {
+enum Mos6502_PushType {
   MOS6502_PHP,
   MOS6502_BRK,
   MOS6502_IRQ,
   MOS6502_NMI,
-} Mos6502_PushType;
+};
 
 /*
  * Sets the unused bit to 1 and the break bit to 0 or 1
