@@ -18,7 +18,7 @@ void Mos6502_set_negative_flag(Mos6502 *cpu, uint8_t byte) {
   cpu->flags |= (byte & NEGATIVE);
 }
 
-void Mos6502_set_zero_fag(Mos6502 *cpu, uint8_t byte) {
+void Mos6502_set_zero_flag(Mos6502 *cpu, uint8_t byte) {
   cpu->flags &= ~ZERO;
   cpu->flags |= (byte == 0) ? ZERO : 0;
 }
