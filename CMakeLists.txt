@@ -25,10 +25,10 @@ target_compile_options(cnes PRIVATE -std=c99 -Wall -Wextra -O2)
 
 # Reuse source files without main.c
 set(test_src ${cnes_src})
-list(REMOVE_ITEM test_src "include/main.c")
+list(REMOVE_ITEM test_src "${CMAKE_CURRENT_SOURCE_DIR}/src/main.c")
 
 # Get test files
-file(GLOB_RECURSE test_test "test/*.c")
+file(GLOB test_test "test/*.c")
 
 # Build
 add_executable(cnes_test ${test_src} ${test_test})
