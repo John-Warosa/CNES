@@ -3,6 +3,6 @@
 
 #include "cpu/mos6502_types.h"
 
-void test_flags(Mos6502 *cpu);
+void test_flags(Mos6502 cpu);
 
 #endif // TEST_FLAGS_H

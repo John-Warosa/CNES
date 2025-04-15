@@ -2,6 +2,10 @@
 #include "bus/bus.h"
 #include "cpu/mos6502.h"
 
+//==============================================================================
+// Helper functions
+//==============================================================================
+
 static uint16_t address_16_from(const Mos6502 *cpu, uint16_t addr,
                                 uint16_t addrNext) {
   uint8_t loByte = Bus_read(cpu->bus, addr);
@@ -32,6 +36,10 @@ static uint16_t address_zeropage_indirect(const Mos6502 *cpu,
 static uint8_t page_crossed(uint16_t addr1, uint16_t addr2) {
   return ((addr1 & 0xff00) != (addr2 & 0xff00));
 }
+
+//==============================================================================
+// Absolute address mode
+//==============================================================================
 
 Mos6502_DecodedAddress Mos6502_decode_absolute(const Mos6502 *cpu) {
   uint16_t address = address_16_from(cpu, cpu->PC, cpu->PC + 1);
@@ -64,6 +72,10 @@ Mos6502_DecodedAddress Mos6502_decode_absolute_y(const Mos6502 *cpu) {
       .bytesRead = 2,
   };
 }
+
+//==============================================================================
+// Indirect address mode
+//==============================================================================
 
 Mos6502_DecodedAddress Mos6502_decode_indirect(const Mos6502 *cpu) {
   uint16_t addressLookup = address_16_from(cpu, cpu->PC, cpu->PC + 1);
@@ -99,6 +111,10 @@ Mos6502_DecodedAddress Mos6502_decode_indirect_y(const Mos6502 *cpu) {
   };
 }
 
+//==============================================================================
+// Relative address mode
+//==============================================================================
+
 Mos6502_DecodedAddress Mos6502_decode_relative(const Mos6502 *cpu) {
   int8_t offset = (int8_t)Bus_read(cpu->bus, cpu->PC);
   uint16_t addrBase = cpu->PC + 1;
@@ -110,6 +126,10 @@ Mos6502_DecodedAddress Mos6502_decode_relative(const Mos6502 *cpu) {
       .bytesRead = 1,
   };
 }
+
+//==============================================================================
+// Zeropage address mode
+//==============================================================================
 
 Mos6502_DecodedAddress Mos6502_decode_zeropage(const Mos6502 *cpu) {
   uint16_t address = Bus_read(cpu->bus, cpu->PC);

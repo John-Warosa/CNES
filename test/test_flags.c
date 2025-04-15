@@ -1,15 +1,7 @@
 #include "test_flags.h"
 #include "cpu/mos6502.h"
 #include "cpu/mos6502_flags.h"
-#include "cpu/mos6502_types.h"
-#include <assert.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-#define NUM_ELEMS(arr) (sizeof(arr) / sizeof(arr[0]))
-
-static const uint8_t testBytes[] = {0x00, 0xff, 0xf0};
+#include "test_utils.h"
 
 void test_set_negative_flag(Mos6502 *cpu) {
   for (size_t i = 0; i < NUM_ELEMS(testBytes); ++i) {
@@ -26,7 +18,7 @@ void test_set_negative_flag(Mos6502 *cpu) {
     assert((cpu->flags & NEGATIVE) == (testByteRand & NEGATIVE));
   }
 
-  puts("[PASS] set_negative_flag");
+  printf("%s set_negative_flag\n", passText);
 }
 
 void test_set_zero_flag(Mos6502 *cpu) {
@@ -44,7 +36,7 @@ void test_set_zero_flag(Mos6502 *cpu) {
     assert((cpu->flags & ZERO) == (testByteRand == 0 ? ZERO : 0));
   }
 
-  puts("[PASS] set_zero_flag");
+  printf("%s set_zero_flag\n", passText);
 }
 
 void test_set_negative_zero_flag(Mos6502 *cpu) {
@@ -64,7 +56,7 @@ void test_set_negative_zero_flag(Mos6502 *cpu) {
     assert((cpu->flags & NEGATIVE) == (testByteRand & NEGATIVE));
   }
 
-  puts("[PASS] set_negative_zero_flag");
+  printf("%s set_negative_zero_flag\n", passText);
 }
 
 void test_get_status(Mos6502 *cpu) {
@@ -86,7 +78,7 @@ void test_get_status(Mos6502 *cpu) {
     assert(status == ((cpu->flags | UNUSED) & ~BREAK));
   }
 
-  puts("[PASS] get_status");
+  printf("%s get_status\n", passText);
 }
 
 void test_update_status(Mos6502 *cpu) {
@@ -104,16 +96,19 @@ void test_update_status(Mos6502 *cpu) {
     assert(cpu->flags == ((testByteRand) & ~(UNUSED | BREAK)));
   }
 
-  puts("[PASS] update_status");
+  printf("%s update_status\n", passText);
 }
 
-void test_flags(Mos6502 *cpu) {
-  srand(time(NULL));
-  *cpu = (Mos6502){0};
+void test_flags(Mos6502 cpu) {
+  cpu = (Mos6502){0};
 
-  test_set_negative_flag(cpu);
-  test_set_zero_flag(cpu);
-  test_set_negative_zero_flag(cpu);
-  test_get_status(cpu);
-  test_update_status(cpu);
+  puts("Testing Flag behaviour...");
+
+  test_set_negative_flag(&cpu);
+  test_set_zero_flag(&cpu);
+  test_set_negative_zero_flag(&cpu);
+  test_get_status(&cpu);
+  test_update_status(&cpu);
+
+  putchar('\n');
 }

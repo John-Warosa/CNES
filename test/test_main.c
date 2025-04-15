@@ -1,8 +1,18 @@
+#include "bus/bus.h"
 #include "cpu/mos6502.h"
+#include "test_address_modes.h"
 #include "test_flags.h"
+#include <stdlib.h>
+#include <time.h>
 
+#include <assert.h>
+#include <stdio.h>
 int main() {
-  struct Mos6502 cpu = {0};
+  Bus bus = {0};
+  Mos6502 cpu = {.bus = &bus};
 
-  test_flags(&cpu);
+  srand(time(NULL));
+
+  test_flags(cpu);
+  test_address_modes(cpu);
 }
