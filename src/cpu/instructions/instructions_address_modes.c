@@ -38,7 +38,7 @@ static uint8_t page_crossed(uint16_t addr1, uint16_t addr2) {
 }
 
 //==============================================================================
-// Absolute address mode
+// Absolute address modes
 //==============================================================================
 
 Mos6502_DecodedAddress Mos6502_decode_absolute(const Mos6502 *cpu) {
@@ -74,7 +74,7 @@ Mos6502_DecodedAddress Mos6502_decode_absolute_y(const Mos6502 *cpu) {
 }
 
 //==============================================================================
-// Indirect address mode
+// Indirect address modes
 //==============================================================================
 
 Mos6502_DecodedAddress Mos6502_decode_indirect(const Mos6502 *cpu) {
@@ -128,7 +128,7 @@ Mos6502_DecodedAddress Mos6502_decode_relative(const Mos6502 *cpu) {
 }
 
 //==============================================================================
-// Zeropage address mode
+// Zeropage address modes
 //==============================================================================
 
 Mos6502_DecodedAddress Mos6502_decode_zeropage(const Mos6502 *cpu) {

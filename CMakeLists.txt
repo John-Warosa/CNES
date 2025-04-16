@@ -6,6 +6,19 @@ project(NES_EMULATOR VERSION 0.1
                      DESCRIPTION "An emulator for the NES"
                      LANGUAGES C)
 
+option(ENABLE_ASAN "Enable AddressSanitizer" ON)
+
+if (ENABLE_ASAN)
+    message(STATUS "AddressSanitizer ENABLED")
+
+    # Apply to C compiler
+    set(SANITIZER_FLAGS "-fsanitize=address")
+
+    # Apply to all targets
+    add_compile_options(${SANITIZER_FLAGS})
+    add_link_options(${SANITIZER_FLAGS})
+endif()
+
 # Find libraries
 find_package(raylib REQUIRED)
 
@@ -34,4 +47,4 @@ file(GLOB test_test "test/*.c")
 add_executable(cnes_test ${test_src} ${test_test})
 target_include_directories(cnes_test PRIVATE include test)
 target_compile_features(cnes_test PRIVATE c_std_99)
-target_compile_options(cnes_test PRIVATE -std=c99 -Wall -Wextra -Werror -O0 -g)
+target_compile_options(cnes_test PRIVATE -std=c99 -Wall -Wextra -Werror -O0 -g -fsanitize=address)
